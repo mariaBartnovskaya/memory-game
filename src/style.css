@@ -1,0 +1,167 @@
+@font-face {
+  font-family: StratosSkyeng;
+  src: url(/src/ fonts/stratosskyengweb-regular.woff) format(woff),
+    url(/fonts/statosskyeng-v1.001/Web\ fonts/stratosskyengweb-regular.woff2)
+      format(woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vh;
+  height: 100vh;
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 32px;
+  margin-right: 23px;
+}
+
+.content {
+  background: #c2f5ff;
+  border-radius: 12px;
+  width: 480px;
+  height: 459px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.level__title {
+  font-family: StratosSkyeng;
+  width: 208px;
+  font-style: normal;
+  text-align: center;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #004980;
+  margin: 0;
+}
+
+.level-number {
+  background: white;
+  width: 97px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #0080c1;
+  text-align: center;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.level__div {
+  display: flex;
+  gap: 24px;
+  flex-direction: row;
+  margin-top: 48px;
+  margin-bottom: 57px;
+}
+
+.level__button,
+.game-button_start {
+  background: #7ac100;
+  width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  border: none;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: "pnum" on, "lnum" on;
+  color: #fff;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: repeat(4, 8rem);
+  grid-gap: 2rem;
+  perspective: 800px;
+}
+
+.card-face,
+.card-back {
+  height: 133px;
+  width: 95px;
+  position: absolute;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+}
+
+.card-flip {
+  transform: rotateY(180deg) scaleX(-1);
+}
+
+.card-back {
+  background-image: url(img/back.png);
+  backface-visibility: hidden;
+}
+
+.game-box__info {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 480px;
+  margin-bottom: 41px;
+  margin-right: 40px;
+  margin-top: 21px;
+}
+
+.timer-box {
+  display: flex;
+  flex-direction: column;
+  width: 155px;
+}
+
+.timer-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: StratosSkyeng;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: white;
+}
+
+.timer-numb {
+  font-family: StratosSkyeng;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  display: flex;
+  color: white;
+}
+
+.timer-min_name,
+.timer-sec_name,
+.timer-min_numb,
+.timer-sec_numb {
+  margin: 0;
+}
