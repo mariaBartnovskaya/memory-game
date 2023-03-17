@@ -1,14 +1,14 @@
 function renderLevelScreen() {
-  if (container != null) {
+  if (container !== null) {
     container.textContent = "";
   }
   const divContent = document.createElement("div");
   divContent.classList.add("content");
   const title = document.createElement("h1");
   title.textContent = "Выбери сложность";
-  title.classList.add("level__title");
+  title.classList.add("level-title");
   const divLevels = document.createElement("div");
-  divLevels.classList.add("level__div");
+  divLevels.classList.add("level-div");
   const divOne = document.createElement("div");
   divOne.textContent = "1";
   divOne.classList.add("level-number");
@@ -20,7 +20,7 @@ function renderLevelScreen() {
   divThree.classList.add("level-number");
   const buttonStart = document.createElement("button");
   buttonStart.textContent = "Старт";
-  buttonStart.classList.add("level__button");
+  buttonStart.classList.add("level-button");
   container.appendChild(divContent);
   divContent.appendChild(title);
   divContent.appendChild(divLevels);
@@ -44,14 +44,13 @@ function levelChange() {
   numbers.forEach((numb) => {
     numb.addEventListener("click", function (event) {
       const target = event.target;
-      if (target != null) {
+      if (target !== null) {
         window.application.levels = target.textContent;
-
-        if ((window.application.levels = "1")) {
+        if (window.application.levels === "1") {
           renderGameScreenLight();
-        } else if ((window.application.levels = "2")) {
+        } else if (window.application.levels === "2") {
           renderGameScreenMed();
-        } else if ((window.application.levels = "3")) {
+        } else if (window.application.levels === "3") {
           renderGameScreenDif();
         }
         console.log(window.application.levels);
@@ -63,27 +62,27 @@ function levelChange() {
 
 function renderGameScreenDif() {
   const gameBoxInfo = document.createElement("div");
-  gameBoxInfo.classList.add("game-box__info");
+  gameBoxInfo.classList.add("game-box-info");
   const timerBox = document.createElement("div");
   timerBox.classList.add("timer-box");
   const timerName = document.createElement("div");
   timerName.classList.add("timer-name");
   const timerMinName = document.createElement("p");
-  timerMinName.classList.add("timer-min_name");
+  timerMinName.classList.add("timer-min-name");
   timerMinName.textContent = "min";
   const timerSecName = document.createElement("p");
-  timerSecName.classList.add("timer-sec_name");
+  timerSecName.classList.add("timer-sec-name");
   timerSecName.textContent = "sec";
   const timerNumb = document.createElement("div");
   timerNumb.classList.add("timer-numb");
   const timerMinNumb = document.createElement("p");
-  timerMinNumb.classList.add("timer-min_numb");
+  timerMinNumb.classList.add("timer-min-numb");
   timerMinNumb.textContent = "00.";
   const timerSecNumb = document.createElement("p");
-  timerSecNumb.classList.add("timer-sec_numb");
+  timerSecNumb.classList.add("timer-sec-numb");
   timerSecNumb.textContent = "00";
   const gameButtonStart = document.createElement("button");
-  gameButtonStart.classList.add("game-button_start");
+  gameButtonStart.classList.add("game-button-start");
   gameButtonStart.textContent = "Начать заново";
   const cardsContainer = document.createElement("div");
   cardsContainer.classList.add("cards-container");
@@ -132,7 +131,7 @@ function renderGameScreenDif() {
       card.appendChild(back);
       face.src = element.img;
 
-      card.addEventListener("click", (e) => {
+      card.addEventListener("click", () => {
         card.classList.add("card-flip");
       });
     });

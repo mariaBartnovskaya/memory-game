@@ -1,8 +1,7 @@
 @font-face {
   font-family: StratosSkyeng;
-  src: url(/src/ fonts/stratosskyengweb-regular.woff) format(woff),
-    url(/fonts/statosskyeng-v1.001/Web\ fonts/stratosskyengweb-regular.woff2)
-      format(woff2);
+  src: url("/fonts/stratosskyengweb-regular.woff") format(woff),
+    url("/fonts/stratosskyengweb-regular.woff2") format(woff2);
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -38,8 +37,8 @@ body {
   align-items: center;
 }
 
-.level__title {
-  font-family: StratosSkyeng;
+.level-title {
+  font-family: StratosSkyeng, serif;
   width: 208px;
   font-style: normal;
   text-align: center;
@@ -64,7 +63,7 @@ body {
   padding-bottom: 12px;
 }
 
-.level__div {
+.level-div {
   display: flex;
   gap: 24px;
   flex-direction: row;
@@ -72,8 +71,8 @@ body {
   margin-bottom: 57px;
 }
 
-.level__button,
-.game-button_start {
+.level-button,
+.game-button-start {
   background: #7ac100;
   width: 246px;
   height: 50px;
@@ -115,11 +114,11 @@ body {
 }
 
 .card-back {
-  background-image: url(img/back.png);
+  background-image: url("img/back.png");
   backface-visibility: hidden;
 }
 
-.game-box__info {
+.game-box-info {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -141,7 +140,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  font-family: StratosSkyeng;
+  font-family: StratosSkyeng, serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -150,7 +149,7 @@ body {
 }
 
 .timer-numb {
-  font-family: StratosSkyeng;
+  font-family: StratosSkyeng, serif;
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
@@ -159,9 +158,9 @@ body {
   color: white;
 }
 
-.timer-min_name,
-.timer-sec_name,
-.timer-min_numb,
-.timer-sec_numb {
+.timer-min-numb,
+.timer-sec-numb,
+.timer-min-name,
+.timer-sec-name {
   margin: 0;
 }
