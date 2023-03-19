@@ -40,25 +40,111 @@ window.application.screens["levels"] = renderLevelScreen;
 window.application.renderScreen("levels");
 
 function levelChange() {
-  const numbers = document.querySelectorAll("level-number");
+  const numbers = document.querySelectorAll(".level-number");
   numbers.forEach((numb) => {
     numb.addEventListener("click", function (event) {
       const target = event.target;
-      if (target !== null) {
-        window.application.levels = target.textContent;
-        if (window.application.levels === "1") {
-          renderGameScreenLight();
-        } else if (window.application.levels === "2") {
-          renderGameScreenMed();
-        } else if (window.application.levels === "3") {
-          renderGameScreenDif();
-        }
-        console.log(window.application.levels);
-      }
+      window.application.levels = target.textContent;
+      console.log(window.application.levels);
     });
   });
   console.log(numbers);
 }
+
+function renderGameScreen() {
+  const gameBoxInfo = document.createElement("div");
+  gameBoxInfo.classList.add("game-box-info");
+  const timerBox = document.createElement("div");
+  timerBox.classList.add("timer-box");
+  const timerName = document.createElement("div");
+  timerName.classList.add("timer-name");
+  const timerMinName = document.createElement("p");
+  timerMinName.classList.add("timer-min-name");
+  timerMinName.textContent = "min";
+  const timerSecName = document.createElement("p");
+  timerSecName.classList.add("timer-sec-name");
+  timerSecName.textContent = "sec";
+  const timerNumb = document.createElement("div");
+  timerNumb.classList.add("timer-numb");
+  const timerMinNumb = document.createElement("p");
+  timerMinNumb.classList.add("timer-min-numb");
+  timerMinNumb.textContent = "00.";
+  const timerSecNumb = document.createElement("p");
+  timerSecNumb.classList.add("timer-sec-numb");
+  timerSecNumb.textContent = "00";
+  const gameButtonStart = document.createElement("button");
+  gameButtonStart.classList.add("game-button-start");
+  gameButtonStart.textContent = "Начать заново";
+  const cardsContainer = document.createElement("div");
+  cardsContainer.classList.add("cards-container");
+  container.appendChild(gameBoxInfo);
+  container.appendChild(cardsContainer);
+  gameBoxInfo.appendChild(timerBox);
+  gameBoxInfo.appendChild(gameButtonStart);
+  timerBox.appendChild(timerName);
+  timerName.appendChild(timerMinName);
+  timerName.appendChild(timerSecName);
+  timerBox.appendChild(timerNumb);
+  timerNumb.appendChild(timerMinNumb);
+  timerNumb.appendChild(timerSecNumb);
+
+  const cardsData1 = [
+    { img: "./img/1.png", name: "1" },
+    { img: "./img/2.png", name: "2" },
+    { img: "./img/3.png", name: "3" },
+    { img: "./img/4.png", name: "4" },
+    { img: "./img/5.png", name: "5" },
+    { img: "./img/6.png", name: "6" },
+    { img: "./img/7.png", name: "7" },
+    { img: "./img/8.png", name: "8" },
+    { img: "./img/9.png", name: "9" },
+    { img: "./img/10.png", name: "10" },
+    { img: "./img/11.png", name: "11" },
+    { img: "./img/12.png", name: "12" },
+  ];
+  const cardsData = () => cardsData1.concat(cardsData1);
+  console.log(cardsData);
+  //random
+  function random() {
+    const cards = cardsData();
+    cards.sort(() => Math.random() - 0.5);
+    return cards;
+  }
+  function cardGenerate() {
+    const cards = random();
+    cards.forEach((element) => {
+      const card = document.createElement("div");
+      const face = document.createElement("img");
+      card.classList.add("card");
+      face.classList.add("card-face");
+      cardsContainer.appendChild(card);
+      card.appendChild(face);
+      face.src = element.img;
+    });
+  }
+  cardGenerate();
+  let min = 0;
+  let sec = 0;
+  function startTimer() {
+    setInterval(() => {
+      sec++;
+      timerSecNumb.textContent = String(sec);
+      if (sec < 10) {
+        timerSecNumb.textContent = "0" + sec;
+      }
+      if (sec === 60) {
+        sec = 0;
+        min++;
+        timerMinNumb.textContent = min + ".";
+        if (min < 10) {
+          timerMinNumb.textContent = "0" + min + ".";
+        }
+      }
+    }, 1000);
+  }
+  window.application.timers.push(setTimeout(startTimer, 4000));
+}
+window.application.screens["game"] = renderGameScreen;
 
 function renderGameScreenDif() {
   const gameBoxInfo = document.createElement("div");
@@ -97,7 +183,7 @@ function renderGameScreenDif() {
   timerNumb.appendChild(timerMinNumb);
   timerNumb.appendChild(timerSecNumb);
 
-  const cardsData = () => [
+  const cardsData1 = [
     { img: "./img/1.png", name: "1" },
     { img: "./img/2.png", name: "2" },
     { img: "./img/3.png", name: "3" },
@@ -111,6 +197,8 @@ function renderGameScreenDif() {
     { img: "./img/11.png", name: "11" },
     { img: "./img/12.png", name: "12" },
   ];
+  const cardsData = () => cardsData1.concat(cardsData1);
+  console.log(cardsData);
   //random
   function random() {
     const cards = cardsData();
