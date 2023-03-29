@@ -1,9 +1,7 @@
 @font-face {
   font-family: StratosSkyeng;
-  src: url("/fonts/webfonts/statosskyeng-v1.001/Web\ fonts/webfonts/stratosskyengweb-regular.woff")
-      format(woff),
-    url("/fonts/webfonts/statosskyeng-v1.001/Web\ fonts/webfonts/stratosskyengweb-regular.woff2")
-      format(woff2);
+  src: url("./fonts/Webfonts/stratosskyengweb-regular.woff") format("woff"),
+    url("./fonts/WEbfonts/stratosskyengweb-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -73,6 +71,10 @@ body {
   margin-bottom: 57px;
 }
 
+.change-level {
+  background: darkblue;
+}
+
 .level-button,
 .game-button-start {
   background: #7ac100;
@@ -103,6 +105,7 @@ body {
   height: 133px;
   width: 95px;
   position: absolute;
+  pointer-events: none;
 }
 
 .card {
