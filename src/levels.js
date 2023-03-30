@@ -71,15 +71,20 @@ function levelChange() {
   numbers.forEach((numb) => {
     numb.addEventListener("click", function (event) {
       const target = event.target;
+      numbers.forEach((numb) => {
+        if (numb.classList.contains("change-level")) {
+          numb.classList.remove("change-level");
+        }
+      });
       if (numb.classList.contains("change-level")) {
         numb.classList.remove("change-level");
       } else {
         numb.classList.add("change-level");
       }
-
       window.application.levels = target.textContent;
     });
   });
+
   console.log(numbers);
 }
 
@@ -121,14 +126,24 @@ function renderGameScreenDif() {
   timerNumb.appendChild(timerMinNumb);
   timerNumb.appendChild(timerSecNumb);
   const cardsData1 = [
-    { img: "./img/1.png", name: "1" },
-    { img: "./img/2.png", name: "2" },
-    { img: "./img/3.png", name: "3" },
-    { img: "./img/4.png", name: "4" },
-    { img: "./img/5.png", name: "5" },
-    { img: "./img/6.png", name: "6" },
-    { img: "./img/7.png", name: "7" },
-    { img: "./img/8.png", name: "8" },
+    { img: "./static/1.png", name: "1" },
+    { img: "./static/2.png", name: "2" },
+    { img: "./static/3.png", name: "3" },
+    { img: "./static/4.png", name: "4" },
+    { img: "./static/5.png", name: "5" },
+    { img: "./static/6.png", name: "6" },
+    { img: "./static/7.png", name: "7" },
+    { img: "./static/8.png", name: "8" },
+    { img: "./static/9.png", name: "9" },
+    { img: "./static/10.png", name: "10" },
+    { img: "./static/11.png", name: "11" },
+    { img: "./static/12.png", name: "12" },
+    { img: "./static/13.png", name: "13" },
+    { img: "./static/14.png", name: "14" },
+    { img: "./static/15.png", name: "15" },
+    { img: "./static/16.png", name: "16" },
+    { img: "./static/17.png", name: "17" },
+    { img: "./static/18.png", name: "18" },
   ];
   let numberOfCards = 0;
   if (window.application.levels === "1") {
@@ -137,8 +152,14 @@ function renderGameScreenDif() {
     numberOfCards = 6;
   } else if (window.application.levels === "3") {
     numberOfCards = 8;
+  } else {
+    numberOfCards = 8;
   }
   console.log(window.application.levels);
+  function shuffle() {
+    cardsData1.sort(() => Math.random() - 0.5);
+  }
+  shuffle();
   const cardsDataNumber = cardsData1.slice(0, numberOfCards);
   const cardsData = () => cardsDataNumber.concat(cardsDataNumber);
   console.log(cardsData);
