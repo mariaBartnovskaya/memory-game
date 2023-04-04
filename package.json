@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write ./src/",
-    "lint:js": "eslint ./src/*.js",
+    "lint:js": "eslint ./src/*.ts",
     "lint:css": "stylelint ./src/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "prepare": "husky install",
     "build": "NODE_ENV=production webpack",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "lint:ts": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -22,10 +23,13 @@
     "stylelint-prettier": "^3.0.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.192",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
-    "eslint": "^8.36.0",
+    "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "html-webpack-plugin": "^5.5.0",
@@ -35,6 +39,8 @@
     "stylelint": "^14.16.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-standard": "^29.0.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.3",
     "webpack": "^5.77.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
