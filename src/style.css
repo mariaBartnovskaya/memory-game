@@ -1,242 +1,243 @@
+/* stylelint-disable prettier/prettier */
 @font-face {
-  font-family: StratosSkyeng;
-  src: url("./fonts/Webfonts/stratosskyengweb-regular.woff") format("woff"),
-    url("./fonts/WEbfonts/stratosskyengweb-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-variant: normal;
+    font-family: StratosSkyeng;
+    src: url("./fonts/Webfonts/stratosskyengweb-regular.woff") format("woff"),
+        url("./fonts/WEbfonts/stratosskyengweb-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  width: 100vh;
-  height: 100vh;
-  background: #e5e5e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-left: 32px;
-  margin-right: 23px;
+    width: 100vh;
+    height: 100vh;
+    background: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 32px;
+    margin-right: 23px;
 }
 
 .content {
-  background: #c2f5ff;
-  border-radius: 12px;
-  width: 480px;
-  height: 459px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+    background: #c2f5ff;
+    border-radius: 12px;
+    width: 480px;
+    height: 459px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .level-title {
-  font-family: StratosSkyeng, serif;
-  width: 208px;
-  font-style: normal;
-  text-align: center;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  color: #004980;
-  margin: 0;
+    font-family: StratosSkyeng, serif;
+    width: 208px;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #004980;
+    margin: 0;
 }
 
 .level-number {
-  background: white;
-  width: 97px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 72px;
-  color: #0080c1;
-  text-align: center;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
+    background: white;
+    width: 97px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #0080c1;
+    text-align: center;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .level-div {
-  display: flex;
-  gap: 24px;
-  flex-direction: row;
-  margin-top: 48px;
-  margin-bottom: 57px;
+    display: flex;
+    gap: 24px;
+    flex-direction: row;
+    margin-top: 48px;
+    margin-bottom: 57px;
 }
 
 .change-level {
-  background: darkblue;
+    background: darkblue;
 }
 
 .level-button,
 .win-button,
 .game-button-start {
-  background: #7ac100;
-  width: 246px;
-  height: 50px;
-  border-radius: 12px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  border: none;
-  align-items: center;
-  text-align: center;
-  font-feature-settings: "pnum" on, "lnum" on;
-  color: #fff;
+    background: #7ac100;
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    border: none;
+    align-items: center;
+    text-align: center;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: #fff;
 }
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 6rem);
-  grid-template-rows: repeat(4, 8rem);
-  grid-gap: 2rem;
-  perspective: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: repeat(4, 8rem);
+    grid-gap: 2rem;
+    perspective: 800px;
 }
 
 .card-face,
 .card-back {
-  height: 133px;
-  width: 95px;
-  position: absolute;
-  pointer-events: none;
+    height: 133px;
+    width: 95px;
+    position: absolute;
+    pointer-events: none;
 }
 
 .card {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: all 2s ease;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s ease;
 }
 
 .card-flip {
-  transform: rotateY(180deg) scaleX(-1);
+    transform: rotateY(180deg) scaleX(-1);
 }
 @keyframes show {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 .card-back {
-  background-image: url("img/back.png");
-  animation: show 2s;
-  backface-visibility: hidden;
+    background-image: url("img/back.png");
+    animation: show 2s;
+    backface-visibility: hidden;
 }
 
 .game-box-info {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  width: 480px;
-  margin-bottom: 41px;
-  margin-right: 40px;
-  margin-top: 21px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 480px;
+    margin-bottom: 41px;
+    margin-right: 40px;
+    margin-top: 21px;
 }
 
 .timer-box {
-  display: flex;
-  flex-direction: column;
-  width: 155px;
+    display: flex;
+    flex-direction: column;
+    width: 155px;
 }
 
 .timer-name {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-family: StratosSkyeng, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 32px;
-  color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: StratosSkyeng, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: white;
 }
 
 .timer-numb {
-  font-family: StratosSkyeng, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 72px;
-  display: flex;
-  color: white;
+    font-family: StratosSkyeng, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    display: flex;
+    color: white;
 }
 
 .timer-min-numb,
 .timer-sec-numb,
 .timer-min-name,
 .timer-sec-name {
-  margin: 0;
+    margin: 0;
 }
 
 .win-title {
-  height: 48px;
-  left: 384px;
-  top: 289px;
-  font-family: StratosSkyeng, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  font-feature-settings: "pnum" on, "lnum" on;
-  color: #004980;
-  margin-top: 4px;
-  margin-bottom: 0;
+    height: 48px;
+    left: 384px;
+    top: 289px;
+    font-family: StratosSkyeng, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: #004980;
+    margin-top: 4px;
+    margin-bottom: 0;
 }
 
 .timer-title {
-  height: 32px;
-  left: 397px;
-  top: 365px;
-  font-family: StratosSkyeng, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  font-feature-settings: "pnum" on, "lnum" on;
-  color: #000;
-  margin-top: 28px;
-  margin-bottom: 0;
+    height: 32px;
+    left: 397px;
+    top: 365px;
+    font-family: StratosSkyeng, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    font-feature-settings: "pnum" on, "lnum" on;
+    color: #000;
+    margin-top: 28px;
+    margin-bottom: 0;
 }
 
 .spend-time {
-  margin-top: 10px;
-  height: 72px;
-  left: 435px;
-  top: 407px;
-  font-family: StratosSkyeng, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 72px;
-  color: #000;
-  margin-bottom: 40px;
+    margin-top: 10px;
+    height: 72px;
+    left: 435px;
+    top: 407px;
+    font-family: StratosSkyeng, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #000;
+    margin-bottom: 40px;
 }
 
 .win-image {
-  width: 96px;
-  height: 96px;
-  margin-top: 30px;
+    width: 96px;
+    height: 96px;
+    margin-top: 30px;
 }
 
 .info-game {
-  width: 480px;
-  height: 459px;
-  background: #c2f5ff;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 480px;
+    height: 459px;
+    background: #c2f5ff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
